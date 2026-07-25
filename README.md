@@ -1,62 +1,60 @@
 # 📄 Conversational RAG with PDF Uploads & Chat History
 
-A **Conversational Retrieval-Augmented Generation (RAG)** application built using **LangChain**, **Groq**, **ChromaDB**, **Hugging Face Embeddings**, and **Streamlit**.
+A **Conversational Retrieval-Augmented Generation (RAG)** application built with **LangChain**, **Groq**, **ChromaDB**, **Hugging Face Embeddings**, and **Streamlit**.
 
-Upload a PDF document, ask questions about its content, and continue the conversation with persistent chat history using unique session IDs.
+Upload a PDF document, ask questions about its content, and continue the conversation naturally with **session-based chat history**.
 
 ---
 
 ## 🚀 Features
 
 - 📄 Upload and process PDF documents
-- 💬 Ask questions based on uploaded PDFs
-- 🧠 Context-aware conversations with chat history
-- 🔍 Semantic search using Chroma Vector Database
-- 🤖 Fast inference with Groq (Llama 3.1)
-- 📚 Hugging Face Sentence Transformers for embeddings
-- 📝 Session-based conversations
+- 💬 Ask questions about uploaded PDFs
+- 🧠 Context-aware conversations using chat history
+- 🔍 Semantic search with Chroma Vector Database
+- 🤖 Fast responses powered by Groq (Llama 3.1)
+- 📚 Hugging Face Sentence Transformers embeddings
+- 📝 Multiple conversations using Session IDs
 - ⚡ Simple and interactive Streamlit interface
 
 ---
 
-## 🖼️ Project Preview
+# 🖼️ Project Preview
 
-### 🏠 Home Page
+## 🏠 Home Page
 
-
-```markdown
-![Home Page](photos\home_page.png)
-```
+<img src="photos/home_page.png" width="900">
 
 ---
 
-### 💬 Question Answering
+## 💬 Question Answering
 
-The chatbot retrieves relevant information from the uploaded PDF and generates accurate answers.
+The chatbot retrieves the most relevant information from the uploaded PDF and generates accurate answers.
 
-```markdown
-![Question Answering](photos\question-answer1.png)
-![Question Answering](photos\question-answer2.png)
-```
+### Example 1
 
----
+<img src="photos/question-answer1.png" width="900">
 
-### 🧠 Chat History
+### Example 2
 
-The application remembers previous conversations within the same session, enabling context-aware follow-up questions.
-
-```markdown
-![Chat History](photos\chat-history.png)
-```
+<img src="photos/question-answer2.png" width="900">
 
 ---
 
-## 🏗️ Tech Stack
+## 🧠 Chat History
+
+The chatbot remembers previous conversations within the same session, allowing follow-up questions without losing context.
+
+<img src="photos/chat-history.png" width="900">
+
+---
+
+# 🏗️ Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
 | Python | Programming Language |
-| Streamlit | Web Interface |
+| Streamlit | User Interface |
 | LangChain | LLM Framework |
 | Groq | LLM Inference |
 | ChromaDB | Vector Database |
@@ -68,7 +66,7 @@ The application remembers previous conversations within the same session, enabli
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 rag-with-pdf-upload/
@@ -76,21 +74,22 @@ rag-with-pdf-upload/
 ├── photos/
 │   ├── home_page.png
 │   ├── question-answer1.png
-│   └── question-answer2.png
+│   ├── question-answer2.png
 │   └── chat-history.png
 │
 ├── app.py
 ├── requirements.txt
-├── .env
 ├── README.md
+├── .gitignore
+├── .env
 └── temp.pdf
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### 1️⃣ Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/amnsingh05/rag-with-pdf-upload.git
@@ -102,15 +101,15 @@ cd rag-with-pdf-upload
 
 ---
 
-### 2️⃣ Create a Virtual Environment
+## 2. Create a Virtual Environment
 
-**Windows**
+### Windows
 
 ```bash
 python -m venv venv
 ```
 
-Activate it
+Activate the environment
 
 ```bash
 venv\Scripts\activate
@@ -118,7 +117,7 @@ venv\Scripts\activate
 
 ---
 
-### 3️⃣ Install Dependencies
+## 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -126,17 +125,19 @@ pip install -r requirements.txt
 
 ---
 
-### 4️⃣ Create a `.env` File
+## 4. Configure Environment Variables
+
+Create a `.env` file in the project directory.
 
 ```env
 HF_TOKEN=your_huggingface_token
 ```
 
-> **Note:** The Groq API Key is entered directly in the application UI.
+> **Note:** The Groq API Key is entered directly in the Streamlit application.
 
 ---
 
-### 5️⃣ Run the Application
+## 5. Run the Application
 
 ```bash
 streamlit run app.py
@@ -144,109 +145,111 @@ streamlit run app.py
 
 ---
 
-## 🔄 How It Works
+# 🔄 Application Workflow
 
 ```text
-             Upload PDF
-                  │
-                  ▼
-           PyPDFLoader
-                  │
-                  ▼
-      Text Chunking (RecursiveCharacterTextSplitter)
-                  │
-                  ▼
-     Hugging Face Embeddings
-                  │
-                  ▼
-         Chroma Vector Store
-                  │
-                  ▼
-     History Aware Retriever
-                  │
-                  ▼
-        Groq (Llama 3.1)
-                  │
-                  ▼
-      Context-Aware Response
-                  │
-                  ▼
-      Chat History is Stored
+                Upload PDF
+                     │
+                     ▼
+              PyPDFLoader
+                     │
+                     ▼
+       RecursiveCharacterTextSplitter
+                     │
+                     ▼
+     Hugging Face Sentence Embeddings
+                     │
+                     ▼
+          Chroma Vector Database
+                     │
+                     ▼
+      History Aware Retriever
+                     │
+                     ▼
+       Groq (Llama 3.1 Instant)
+                     │
+                     ▼
+        Generate Context-Aware Answer
+                     │
+                     ▼
+      Store Conversation History
 ```
 
 ---
 
-## 💬 Example Questions
+# 💬 Example Questions
 
 - What is the Transformer architecture?
 - Summarize the uploaded paper.
-- Explain self-attention in simple words.
+- Explain self-attention in simple terms.
 - What problem does the paper solve?
 - What are the encoder and decoder?
 - What are the key contributions of the paper?
-- Give a detailed summary.
 - Explain positional encoding.
+- Provide a detailed summary.
 
 ---
 
-## ✨ Key Concepts Used
+# ✨ Concepts Demonstrated
 
 - Retrieval-Augmented Generation (RAG)
 - Conversational RAG
 - Context-Aware Retrieval
-- Chat Memory
+- Chat History Management
 - Vector Embeddings
 - Semantic Search
-- Document Chunking
 - Prompt Engineering
+- Document Chunking
 - Session-Based Conversations
 
 ---
 
-## 📦 Dependencies
+# 📦 Dependencies
 
-- streamlit
-- langchain
-- langchain-community
-- langchain-classic
-- langchain-chroma
-- langchain-groq
-- langchain-huggingface
-- chromadb
-- sentence-transformers
-- pypdf
-- python-dotenv
+- Streamlit
+- LangChain
+- LangChain Community
+- LangChain Classic
+- LangChain Chroma
+- LangChain Groq
+- LangChain HuggingFace
+- ChromaDB
+- Sentence Transformers
+- PyPDF
+- Python Dotenv
 
 ---
 
-## 🚀 Future Improvements
+# 🚀 Future Improvements
 
-- 📚 Multiple PDF support
+- 📚 Multiple PDF uploads
 - 💬 ChatGPT-style chat interface
 - 📖 Source citations
 - ⚡ Streaming responses
-- 💾 Persistent vector database
+- 💾 Persistent Chroma database
 - ☁️ Streamlit Cloud deployment
-- 📥 Export conversation
+- 📥 Export chat history
 - 🎨 Improved UI/UX
 - 🌐 Multi-document retrieval
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Aman Singh**
+### Aman Singh
 
-**LinkedIn**  
+**LinkedIn**
+
 https://linkedin.com/in/amnsingh0
 
-**GitHub**  
+**GitHub**
+
 https://github.com/amnsingh05
 
 ---
 
-## ⭐ Support
+## ⭐ If you found this project helpful, consider giving it a Star on GitHub!
 
-If you found this project helpful, please consider giving it a **⭐ Star** on GitHub. It helps others discover the project and supports future development.
+It helps others discover the project and motivates future improvements.
 
 ---
